@@ -1,0 +1,61 @@
+@use "../../scss/" as *;
+
+@import './variables';  
+@import './breakpoint';
+@import './index';
+@import './mixin';
+
+
+
+.movie_card {
+    position: relative;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    // padding-top: 160%;
+    border-radius: $border_radius;
+    margin-bottom: 1rem;
+    height: 400px;
+
+    @include mobile {
+        height: 200px;
+    }
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    .btn {
+        transform: scale(0);
+        transition: transform .3s ease-in-out, box-shadow .3s ease-in-out;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: $black;
+        opacity: 0;
+        border-radius: $border_radius;
+        transition: opacity .3s ease-in-out;
+
+    }
+
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover::before {
+            opacity: .8;
+        }
+
+        &:hover {
+
+            .btn {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    }
+}

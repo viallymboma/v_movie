@@ -1,0 +1,20 @@
+@use "../../scss/" as *;
+
+@import './variables';  
+@import './breakpoint';
+@import './index';
+@import './mixin';
+
+
+.movie_list {
+    .swiper-slide {
+        width: 15%;
+        @include tablet {
+            width: 30%;
+        }
+
+        @include mobile {
+            width: 40%;
+        }
+    }
+}

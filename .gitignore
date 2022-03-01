@@ -7,6 +7,9 @@
 *.o
 *.obj
 
+# dependencies
+/node_modules
+
 # Precompiled Headers
 *.gch
 *.pch
